@@ -28,9 +28,9 @@ the available tasks, actions and observations.
 
 ## Requirements
 
-`dm_memorytasks` requires [Docker](https://www.docker.com) and
-[Python](https://www.python.org/). We have tested `dm_memorytasks` on Python
-3.6. We do not attempt to maintain a working version for Python 2.7.
+`dm_memorytasks` requires [Docker](https://www.docker.com),
+[Python](https://www.python.org/) 3.6.1 or later and a x86-64 CPU with SSE4.2
+support. We do not attempt to maintain a working version for Python 2.
 
 Note: We recommend using
 [Python virtual environment](https://docs.python.org/3/tutorial/venv.html) to
@@ -38,8 +38,7 @@ mitigate conflicts with your system's Python environment.
 
 Download and install Docker:
 
-*   For Linux, install
-    [Docker-CE](https://docs.docker.com/install/linux/docker-ce/)
+*   For Linux, install [Docker-CE](https://docs.docker.com/install/)
 *   Install Docker Desktop for
     [OSX](https://docs.docker.com/docker-for-mac/install/) or
     [Windows](https://docs.docker.com/docker-for-windows/install/).
