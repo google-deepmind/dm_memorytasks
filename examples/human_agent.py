@@ -76,6 +76,8 @@ def main(_):
     score = 0
     clock = pygame.time.Clock()
     while True:
+      # Do not close with CTRL-C as otherwise the docker container may be left
+      # running on exit.
       for event in pygame.event.get():
         if event.type == pygame.QUIT:
           return
