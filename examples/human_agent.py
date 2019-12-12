@@ -59,7 +59,10 @@ _NO_ACTION = {
 
 def main(_):
   pygame.init()
-  pygame.mixer.quit()
+  try:
+    pygame.mixer.quit()
+  except NotImplementedError:
+    pass
   pygame.display.set_caption('Memory Tasks Human Agent')
 
   env_settings = dm_memorytasks.EnvironmentSettings(
