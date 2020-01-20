@@ -25,7 +25,7 @@ flags.DEFINE_string('path', '',
                     'Directory that contains dm_memorytasks environment.')
 
 
-class LoadFromDockerTest(test_utils.EnvironmentTestMixin, absltest.TestCase):
+class LoadFromDiskTest(test_utils.EnvironmentTestMixin, absltest.TestCase):
 
   def make_object_under_test(self):
     return dm_memorytasks.load_from_disk(
