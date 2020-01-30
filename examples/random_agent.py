@@ -55,7 +55,7 @@ def main(_):
   env_settings = dm_memorytasks.EnvironmentSettings(
       seed=FLAGS.seed, level_name=FLAGS.level_name)
   with dm_memorytasks.load_from_docker(
-      name=FLAGS.docker_image_name, setings=env_settings) as env:
+      name=FLAGS.docker_image_name, settings=env_settings) as env:
     agent = RandomAgent(env.action_spec())
 
     timestep = env.reset()
