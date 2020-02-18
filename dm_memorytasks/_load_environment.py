@@ -264,10 +264,9 @@ def _connect_to_environment(port, settings):
           settings={
               'seed': tensor_utils.pack_tensor(settings.seed),
               'episodeId': tensor_utils.pack_tensor(0),
+              'levelName': tensor_utils.pack_tensor(settings.level_name),
           })).world_name
   join_world_settings = {
-      'levelName':
-          tensor_utils.pack_tensor(settings.level_name),
       'width':
           tensor_utils.pack_tensor(settings.width),
       'height':
