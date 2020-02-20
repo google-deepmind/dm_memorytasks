@@ -42,7 +42,7 @@ _MAX_CONNECTION_ATTEMPTS = 10
 # Port to expect the docker environment to internally listen on.
 _DOCKER_INTERNAL_GRPC_PORT = 10000
 
-_DEFAULT_DOCKER_IMAGE_NAME = 'gcr.io/deepmind-environments/dm_memorytasks:v1.0.0'
+_DEFAULT_DOCKER_IMAGE_NAME = 'gcr.io/deepmind-environments/dm_memorytasks:v1.0.1'
 
 _MEMORY_TASK_OBSERVATIONS = ['RGB_INTERLEAVED', 'AvatarPosition', 'Score']
 

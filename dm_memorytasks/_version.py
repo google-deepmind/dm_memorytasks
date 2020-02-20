@@ -17,4 +17,4 @@
 Kept in separate file so it can be used during installation.
 """
 
-__version__ = '1.0.0'  # https://www.python.org/dev/peps/pep-0440/
+__version__ = '1.0.1'  # https://www.python.org/dev/peps/pep-0440/
