@@ -46,14 +46,7 @@ _DEFAULT_DOCKER_IMAGE_NAME = 'gcr.io/deepmind-environments/dm_memorytasks:v1.0.0
 
 _MEMORY_TASK_OBSERVATIONS = ['RGB_INTERLEAVED', 'AvatarPosition', 'Score']
 
-_MEMORY_TASK_LEVEL_NAMES = {
-    'goal_with_buildings_extrapolate',
-    'goal_with_buildings_holdout_extrapolate',
-    'goal_with_buildings_holdout_interpolate',
-    'goal_with_buildings_holdout_large',
-    'goal_with_buildings_holdout_small',
-    'goal_with_buildings_interpolate',
-    'goal_with_buildings_train',
+MEMORY_TASK_LEVEL_NAMES = frozenset((
     'invisible_goal_empty_arena_extrapolate',
     'invisible_goal_empty_arena_holdout_extrapolate',
     'invisible_goal_empty_arena_holdout_interpolate',
@@ -61,6 +54,13 @@ _MEMORY_TASK_LEVEL_NAMES = {
     'invisible_goal_empty_arena_holdout_small',
     'invisible_goal_empty_arena_interpolate',
     'invisible_goal_empty_arena_train',
+    'invisible_goal_with_buildings_extrapolate',
+    'invisible_goal_with_buildings_holdout_extrapolate',
+    'invisible_goal_with_buildings_holdout_interpolate',
+    'invisible_goal_with_buildings_holdout_large',
+    'invisible_goal_with_buildings_holdout_small',
+    'invisible_goal_with_buildings_interpolate',
+    'invisible_goal_with_buildings_train',
     'spot_diff_extrapolate',
     'spot_diff_holdout_extrapolate',
     'spot_diff_holdout_interpolate',
@@ -97,7 +97,14 @@ _MEMORY_TASK_LEVEL_NAMES = {
     'transitive_inference_interpolate',
     'transitive_inference_train_large',
     'transitive_inference_train_small',
-}
+    'visible_goal_with_buildings_extrapolate',
+    'visible_goal_with_buildings_holdout_extrapolate',
+    'visible_goal_with_buildings_holdout_interpolate',
+    'visible_goal_with_buildings_holdout_large',
+    'visible_goal_with_buildings_holdout_small',
+    'visible_goal_with_buildings_interpolate',
+    'visible_goal_with_buildings_train',
+))
 
 _ConnectionDetails = collections.namedtuple('_ConnectionDetails',
                                             ['channel', 'connection', 'specs'])
@@ -252,9 +259,9 @@ def _wrap_send(send):
 
 def _connect_to_environment(port, settings):
   """Helper function for connecting to a running dm_memorytask environment."""
-  if settings.level_name not in _MEMORY_TASK_LEVEL_NAMES:
+  if settings.level_name not in MEMORY_TASK_LEVEL_NAMES:
     raise ValueError(
-        'Level named "{}" is not supported for dm_memorytask'.format(
+        'Level named "{}" is not a valid dm_memorytask level.'.format(
             settings.level_name))
   channel, connection = _create_channel_and_connection(port)
   original_send = connection.send

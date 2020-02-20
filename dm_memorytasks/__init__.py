@@ -19,5 +19,7 @@ from dm_memorytasks._version import __version__
 
 EnvironmentSettings = _load_environment.EnvironmentSettings
 
+MEMORY_TASK_LEVEL_NAMES = _load_environment.MEMORY_TASK_LEVEL_NAMES
+
 load_from_disk = _load_environment.load_from_disk
 load_from_docker = _load_environment.load_from_docker

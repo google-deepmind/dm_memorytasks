@@ -16,6 +16,7 @@
 
 from absl import flags
 from absl.testing import absltest
+from absl.testing import parameterized
 from dm_env import test_utils
 import dm_memorytasks
 
@@ -32,6 +33,17 @@ class LoadFromDiskTest(test_utils.EnvironmentTestMixin, absltest.TestCase):
         FLAGS.path,
         settings=dm_memorytasks.EnvironmentSettings(
             seed=123, level_name='spot_diff_extrapolate'))
+
+
+class MemoryTaskTest(parameterized.TestCase):
+
+  @parameterized.parameters(dm_memorytasks.MEMORY_TASK_LEVEL_NAMES)
+  def test_load_level(self, level_name):
+    self.assertIsNotNone(
+        dm_memorytasks.load_from_disk(
+            FLAGS.path,
+            settings=dm_memorytasks.EnvironmentSettings(
+                seed=123, level_name=level_name)))
 
 
 if __name__ == '__main__':
