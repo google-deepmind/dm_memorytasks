@@ -34,6 +34,7 @@ import portpicker
 from dm_env_rpc.v1 import connection as dm_env_rpc_connection
 from dm_env_rpc.v1 import dm_env_adaptor
 from dm_env_rpc.v1 import dm_env_rpc_pb2
+from dm_env_rpc.v1 import error
 from dm_env_rpc.v1 import tensor_utils
 
 # Maximum number of times to attempt gRPC connection.
@@ -210,7 +211,7 @@ def _can_send_message(connection):
     # This should return a response with an error unless the server isn't yet
     # receiving requests.
     connection.send(dm_env_rpc_pb2.StepRequest())
-  except ValueError:
+  except error.DmEnvRpcError:
     return True
   except grpc.RpcError:
     return False
