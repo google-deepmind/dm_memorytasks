@@ -1,5 +1,9 @@
 # Release Notes
 
+## [1.0.2]
+
+*   Update to incorporate dm_env_rpc v1.0.1.
+
 ## [1.0.1]
 
 *   Updated missing "visible_\*" levels and incorrectly named "goal" levels.
