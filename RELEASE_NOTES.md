@@ -1,9 +1,5 @@
 # Release Notes
 
-## [1.0.3]
-
-*   Set dm_env_rpc version to < v1.1.0.
-
 ## [1.0.2]
 
 *   Update to incorporate dm_env_rpc v1.0.1.

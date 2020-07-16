@@ -35,7 +35,7 @@ setup(
     install_requires=[
         'absl-py',
         'dm-env',
-        'dm-env-rpc<1.1.0',
+        'dm-env-rpc',
         'docker',
         'grpcio',
         'numpy',

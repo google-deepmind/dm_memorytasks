@@ -35,11 +35,10 @@ the scale dimension is altered as per the corresponding holdout variant.
 In these levels, the set of stimuli that is used is the holdout set, but the
 scale dimensions are the ones used in `_train`.
 
-To run on one of the 4 PsychLab tasks or the DeepMind Lab goal navigation tasks,
-listed
+To run on one of the 4 PsychLab tasks or the DMLab goal navigation tasks, listed
 [here](https://github.com/deepmind/lab/tree/master/game_scripts/levels/contributed/psychlab/memory_suite_01),
 follow the
-[DeepMind Lab instructions for using `dm_env`](https://github.com/deepmind/lab#train-an-agent).
+[DMLab instructions for using `dm_env`](https://github.com/deepmind/lab#train-an-agent).
 
 ### Base task names
 
@@ -59,7 +58,7 @@ follow the
 
 #### Goal Navigation (all in Unity except 1)
 
-*   `explore_goal_locations` (DeepMind Lab)
+*   `explore_goal_locations` (DMLab)
 *   `invisible_goal_empty_arena`
 *   `invisible_goal_with_buildings`
 *   `visible_goal_with_buildings`
