@@ -10,17 +10,17 @@ there are 4 tasks in the overall Memory Task Suite that are modifications of
 tasks, and 1 that is a modification of a
 [DMLab](https://github.com/deepmind/lab) level.
 
-NOTE: The 5 other tasks in the Suite are in Psychlab and DMLab, not Unity.
+**NOTE:** The 5 other tasks in the Suite are in Psychlab and DMLab, not Unity.
 Psychlab is part of DMLab. DMLab has a separate set of installation
 [instructions](https://github.com/deepmind/lab).
 
 ## Overview
 
-These tasks are provided through pre-packaged
-[Docker containers](http://www.docker.com).
+The 8 Unity-based tasks are provided through a pre-packaged
+[Docker container](http://www.docker.com).
 
-This package consists of support code to run these Docker containers. You
-interact with the task environment via a
+The `dm_memorytasks` package consists of support code to run these Docker
+containers. You interact with the task environment via a
 [`dm_env`](http://www.github.com/deepmind/dm_env) Python interface.
 
 Please see the [documentation](docs/index.md) for more detailed information on
